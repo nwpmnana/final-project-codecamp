@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Responsive Resume Page</title>
+<title>Dynamic Resume Page</title>
 <meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/style1.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  function changeName(){
+    let newName = prompt("Input Name : ");
+    if(newName){
+      document.getElementById('name-label').innerHTML = newName;
+    }
+  }
+  
+  function addTalent(){
+    let countList = document.getElementById("countList").value;
+        countList = parseInt(countList)+1;
+    let newTalent = prompt("Input Talent : ");
+    if(newTalent){
+      let ul = document.getElementById("talent");
+      let li = document.createElement("li");
+      li.setAttribute("id","li-"+countList)
+      li.innerHTML = newTalent+" <span class='fa fa-times-circle' onclick='removeTalent("+countList+")'></span>";
+      ul.appendChild(li);
+    }
+  }
+
+  function removeTalent(objId){
+    let txt;
+    if (confirm("Confirm!")) {
+      document.getElementById('li-'+objId).remove();
+    } 
+  }
+
+</script>
 </head>
-<body>
+<body onmouseover="this.style.backgroundColor='#FFB535';" onmouseout="this.style.backgroundColor='#ffffff';">
 <div class="container">
 <header>
   <h1>NUCHJAREE YANKLANG</h1>
@@ -20,7 +49,7 @@
   <nav>
     <img src="images/MEIMG.JPG">
     <div class="name">
-      <h2>นางสาวนุจรี ย่านกลาง</h2>
+      <h2><span id="name-label" onclick="changeName()" style="cursor: pointer;">นางสาวนุจรี ย่านกลาง</span></h2>
       <h2>ชื่อเล่น : นุช</h2>
     </div>
     <hr>
@@ -109,13 +138,20 @@
       <h1><i class="fa fa-magic"></i>  ความสามารถพิเศษ</h1>
        <div class="box-wrap-sup">
         <div class="box-wrap-left"></div>
-        <div class="box-wrap-right">
-           <ul>
-            <li>HTML,CSS,Javascript,PHP</li>
-            <li>My SQL,MS SQL, DB2</li>
-            <li>Codeigniter,Laravel</li>
+        <div class="box-wrap-right" style="border-bottom: none;">
+           <ul id="talent" style="padding-bottom: 0px; margin-bottom: 0px;">
+            <li id="li-1">HTML,CSS,Javascript,PHP <span class="fa fa-times-circle" onclick="removeTalent(1)"></span></li>
+            <li id="li-2">My SQL,MS SQL, DB2 <span class="fa fa-times-circle" onclick="removeTalent(2)"></span></li>
+            <li id="li-3">Codeigniter,Laravel <span class="fa fa-times-circle" onclick="removeTalent(3)"></span></li>
           </ul> 
         </div>
+          <div class="box-wrap-left">&nbsp;</div>
+          <div class="box-wrap-right" >
+            <div class="l-pd">
+              <input type="hidden" id="countList" value="3">  
+              <span class="fa fa-plus-circle" style="font-size: 200%" onclick="addTalent()"></span>
+           </div>
+          </div>
       </div>
     </div>
 
