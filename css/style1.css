@@ -10,7 +10,8 @@ body {
 h1, h2, h3, h4 {line-height: 1em;}
 
 .container{
-  width: 1080px;
+  max-width: 1080px;
+  width:auto;
   margin: 0 auto;
 }
 
@@ -46,7 +47,7 @@ header hr{
 nav {
   float: left;
   width: 30%;
-  height: 1020px; /* only for demonstration, should be removed */
+  min-height: 1020px; /* only for demonstration, should be removed */
   background: #F2F3F4;
   padding: 20px;
 }
@@ -69,8 +70,9 @@ article {
   padding: 20px;
   width: 70%;
   background-color: #ffffff;
-  height: 1020px; /* only for demonstration, should be removed */
+  min-height: 1020px; /* only for demonstration, should be removed */
 }
+article li{cursor: pointer;}
 /* Clear floats after the columns */
 section:after {
   content: "";
@@ -118,3 +120,10 @@ footer {
 .l-pd span {
     font-size: 90%;
 }
+
+@media screen and (max-width: 1080px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
