@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  margin:0;
+}
+
+h1, h2, h3, h4 {line-height: 1em;}
+
+.container{
+  width: 1080px;
+  margin: 0 auto;
+}
+
+/* Style the header */
+header {
+  float: left;
+  padding: 20px;
+  width: 100%;
+  background-color: #1F365C;
+  height: 160px; /* only for demonstration, should be removed */
+  color: #ffffff;
+}
+header h1,h3 {letter-spacing: 3px;}
+header .image{
+  width: 140px;
+  float: left;
+  height: 300px;
+}
+header img{
+  width: 100%;
+}
+header .text{
+  width: 440px;
+  float: left;
+  padding-left: 20px;
+  padding-top: 40px;
+}
+header hr{
+  border: 1px solid #FFB535; 
+  width: 133px; 
+  float: left;
+}
+nav {
+  float: left;
+  width: 30%;
+  height: 1020px; /* only for demonstration, should be removed */
+  background: #F2F3F4;
+  padding: 20px;
+}
+nav img {
+    width: 100%;
+}
+nav hr {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255, 181, 53);
+    border-image: initial;
+}
+nav .fa {
+    font-size: 200%;
+    display: block;
+    padding: 20px 0px;
+}
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #ffffff;
+  height: 1020px; /* only for demonstration, should be removed */
+}
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.name {
+    text-align: center;
+    padding: 20px 0px;
+}
+.contact {
+    text-align: center;
+}
+.box-wrap {
+    height: auto;
+    width: 100%;
+}
+.box-wrap-sup {
+    border-top: 1px solid rgb(255, 181, 53);
+}
+.box-wrap-left {
+    float: left;
+    width: 25%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.box-wrap-right {
+    float: left;
+    width: 75%;
+    background-color: rgb(242, 243, 244);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted rgb(255, 181, 53);
+}
+footer {
+    background-color: rgb(31, 54, 92);
+    height: 20px;
+    border-bottom: 1px solid rgb(255, 181, 53);
+}
+.clear {
+    clear: both;
+}
+.l-pd {padding-left: 20px;}
+.l-pd span {
+    font-size: 90%;
+}
